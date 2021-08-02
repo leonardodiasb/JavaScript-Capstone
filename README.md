@@ -2,9 +2,9 @@
 
 # Reskitty
 
-> A simple web app made with the jabascript and webpacker for Microverse about kitties adoption.
+> A simple web app made with the javascript and webpacker for Microverse about kitties adoption.
 
-![screenshot](./app_screenshot.png)
+<!-- ![screenshot](./app_screenshot.png) -->
 
 ## Built With
 
