@@ -13,5 +13,5 @@ const mealGet = async () => {
       // commentsFunction(data.meals);
     });
 };
-
+// eslint-disable-next-line
 export { mealGet };
