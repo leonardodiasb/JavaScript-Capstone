@@ -1,13 +1,7 @@
 let mealList = [];
 
 const commentsFunction = (meals) => {
-  console.log(4);
   mealList = meals;
-  console.log(5);
-  console.log(mealList);
-
-  mealPopup('52894');
-
 };
 
 const mealDetails = (idMeal) => {
@@ -15,16 +9,15 @@ const mealDetails = (idMeal) => {
 };
 
 const mealPopup = (idMeal) => {
-  console.log(3);
   const meal = mealDetails(idMeal);
-  console.log(4);
-  console.log(meal);
 
   const commentWindow = document.createElement('div');
-  commentWindow.classList.add('comment-container');
+  commentWindow.classList.add('comment-background');
   commentWindow.innerHTML = 
   `
+  <div class="comment-container">
     <img src="${meal.strMealThumb}" a="${meal.strMeal}" />
+    <button class="close-comment">✖</button>
     <div>
       <h3>${meal.strMeal}</h3>
       <div>
@@ -45,9 +38,16 @@ const mealPopup = (idMeal) => {
         <button type="button">Comment</button>
       </div>
     </div>
+  </div>
   `;
   document.body.appendChild(commentWindow);
-  console.log(5);
+  addClosePopup();
+};
+
+const addClosePopup = () => {
+  document.querySelector('.close-comment').addEventListener('click', () => {
+    document.querySelector('.comment-background').remove();
+  });
 };
 
 export { commentsFunction, mealPopup };
