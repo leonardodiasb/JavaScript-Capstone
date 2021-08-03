@@ -1,5 +1,9 @@
 // import { leaderboardGet, leaderboardPost } from './api.js';
+import { mealGet } from './api_meal.js';
 import './style.css';
+
+mealGet();
+// console.log(mealGet());
 
 // document.querySelector('#submit').addEventListener('click', () => {
 //   // eslint-disable-next-line
