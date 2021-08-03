@@ -2,7 +2,8 @@
 import { mealGet } from './api_meal.js';
 import './style.css';
 
-console.log(mealGet());
+mealGet();
+// console.log(mealGet());
 
 // document.querySelector('#submit').addEventListener('click', () => {
 //   // eslint-disable-next-line

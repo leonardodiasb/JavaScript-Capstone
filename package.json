@@ -40,6 +40,7 @@
     "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.3",
     "babel-jest": "^27.0.6",
     "lodash": "^4.17.21",
     "ts-jest": "^27.0.4"

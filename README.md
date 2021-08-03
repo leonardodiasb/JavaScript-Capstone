@@ -32,9 +32,9 @@
 
 👤 **Leonardo Dias**
 
-- GitHub: [@fernandorpm](https://github.com/fernandorpm)
-- Twitter: [@rpm_fernando](https://twitter.com/rpm_fernando)
-- LinkedIn: [Fernando R P Marques](https://linkedin.com/in/fernandorpm)
+- GitHub: [@leonardodiasb](https://github.com/leonardodiasb)
+- Twitter: [@BussularDias](https://twitter.com/BussularDias)
+- LinkedIn: [Leonardo Dias Bussular](https://www.linkedin.com/in/leonardo-dias-bussular-a67392178/)
 
 ## 🤝 Contributing
 

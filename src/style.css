@@ -46,7 +46,6 @@ a:hover {
 
 footer {
   width: 100%;
-  position: absolute;
   bottom: 0;
   border-top: 3px solid #dfdfdf;
 }
@@ -70,6 +69,33 @@ footer > div > p {
 .score-list-container,
 .add-score-container {
   width: 100%;
+}
+
+.meal-img {
+  max-width: 25vw;
+  width: 100%;
+}
+
+.meal-container {
+  display: flex;
+  padding-top: 130px;
+  padding-bottom: 50px;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+
+.information {
+  display: flex;
+  justify-content: space-between;
+}
+
+.empty-heart {
+  display: block;
+}
+
+.full-heart {
+  display: none;
 }
 
 /* LIST - DISPLAY SCORE ================================================================ */
