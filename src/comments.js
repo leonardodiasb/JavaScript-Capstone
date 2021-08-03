@@ -1,12 +1,12 @@
 let mealList = [];
 
 const commentsFunction = (meals) => {
-  console.log(1);
+  console.log(4);
   mealList = meals;
-  console.log(2);
+  console.log(5);
   console.log(mealList);
 
-console.log(mealPopup('52894'));
+  mealPopup('52894');
 
 };
 

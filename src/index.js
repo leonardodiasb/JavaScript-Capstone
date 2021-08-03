@@ -1,6 +1,5 @@
 // import { leaderboardGet, leaderboardPost } from './api.js';
 import { mealGet } from './api_meal.js';
-import { mealPopup } from './comments.js';
 import './style.css';
 
 window.onload = mealGet;
