@@ -4,8 +4,12 @@ const commentsFunction = (meals) => {
   mealList = meals;
 };
 
-const mealDetails = (idMeal) => {
-  return mealList.filter(meal => meal.idMeal === idMeal)[0];
+const mealDetails = (idMeal) => mealList.filter((meal) => meal.idMeal === idMeal)[0];
+
+const addClosePopup = () => {
+  document.querySelector('.close-comment').addEventListener('click', () => {
+    document.querySelector('.comment-background').remove();
+  });
 };
 
 const mealPopup = (idMeal) => {
@@ -13,8 +17,7 @@ const mealPopup = (idMeal) => {
 
   const commentWindow = document.createElement('div');
   commentWindow.classList.add('comment-background');
-  commentWindow.innerHTML = 
-  `
+  commentWindow.innerHTML = `
   <div class="comment-container">
     <img src="${meal.strMealThumb}" a="${meal.strMeal}" />
     <button class="close-comment">✖</button>
@@ -42,12 +45,6 @@ const mealPopup = (idMeal) => {
   `;
   document.body.appendChild(commentWindow);
   addClosePopup();
-};
-
-const addClosePopup = () => {
-  document.querySelector('.close-comment').addEventListener('click', () => {
-    document.querySelector('.comment-background').remove();
-  });
 };
 
 export { commentsFunction, mealPopup };

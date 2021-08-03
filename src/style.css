@@ -125,9 +125,9 @@ footer > div > p {
   top: 16px;
   right: 16px;
   border-radius: 12px !important;
-  border-top-right-radius: 0px !important;
-  border-bottom-right-radius: 0px !important;
-  border-top-left-radius: 0px !important;
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+  border-top-left-radius: 0 !important;
   background: white !important;
   padding: 10px 15px !important;
   border: 0;
