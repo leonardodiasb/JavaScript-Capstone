@@ -72,15 +72,16 @@ footer > div > p {
 }
 
 .meal-img {
-  max-width: 25vw;
+  max-width: 80vw;
   width: 100%;
 }
 
 .meal-container {
   display: flex;
+  flex-direction: column;
   padding-top: 130px;
   padding-bottom: 50px;
-  justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
   gap: 50px;
 }
@@ -88,14 +89,20 @@ footer > div > p {
 .information {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
-.empty-heart {
+.likes-container {
+  display: flex;
+  align-items: center;
+}
+
+.heart {
+  cursor: pointer;
+  margin: 0;
   display: block;
-}
-
-.full-heart {
-  display: none;
+  font-size: 24px;
+  font-weight: bold;
 }
 
 .comment-background {
@@ -222,5 +229,26 @@ input[type=number] {
   .score-list-container,
   .add-score-container {
     width: 50%;
+  }
+
+  .meal-img {
+    max-width: 30vw;
+    width: 100%;
+  }
+  
+  .meal-container {
+    display: flex;
+    flex-direction: row;
+    padding-top: 130px;
+    padding-bottom: 50px;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 50px;
+  }
+}
+
+@media (min-width: 1080px) {
+  .meal-img {
+    max-width: 25vw;
   }
 }
