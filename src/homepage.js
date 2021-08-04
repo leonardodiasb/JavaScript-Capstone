@@ -1,4 +1,5 @@
 import { postLikes, getLikes, likesArray } from './api_like.js';
+import { addMealPopupFunction } from './comments.js';
 
 const updateLikes = (e) => {
   const numberOfLikes = e.target.parentNode.firstChild.nextSibling;
@@ -47,15 +48,17 @@ const homepageFunction = (array) => {
     mealItem.innerHTML = `
             <img src='${meal.strMealThumb}' a='${meal.strMeal} image' class='meal-img'>
             <div class='information'>    
-                <p>${meal.strMeal}</p>
+                <h4>${meal.strMeal}</h4>
                 <div class='likes-container'>
                   <p class='likes-number'></p>
                   <p class='heart'>♡</p>
                 </div>
             </div>
-            <button type='button' class='comments-btn'>Comments</button>
+            <button type='button' class='comments-btn' id="meal${meal.idMeal}">Comments</button>
             `;
     mealContainer.appendChild(mealItem);
+
+    addMealPopupFunction(meal.idMeal);
   }
   getLikes().then(() => updateLikesHTML());
   addLikeEvent();
