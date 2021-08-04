@@ -1,4 +1,4 @@
-import { commentGet } from './api_comment.js';
+import { commentGet, commentPost } from './api_comment.js';
 
 let mealList = [];
 
@@ -11,6 +11,49 @@ const mealDetails = (idMeal) => mealList.filter((meal) => meal.idMeal === idMeal
 const addClosePopup = () => {
   document.querySelector('.close-comment').addEventListener('click', () => {
     document.querySelector('.comment-background').remove();
+  });
+};
+
+const clearFormField = () => {
+  document.querySelector('#comment-username').value = '';
+  document.querySelector('#comment-comment').value = '';
+};
+
+const displayCommentAmount = () => {
+  const commentAmount = document.querySelector('.comment-amount');
+
+  if (commentAmount.innerHTML.includes('(')) {
+    const initialAmount = commentAmount.innerHTML.split('(')[1].split(')')[0];
+    const finalAmount = Number(initialAmount) + 1;
+    commentAmount.innerHTML = `<h3>Comments (${finalAmount})</h3>`;
+  } else {
+    commentAmount.innerHTML = '<h3>Comments (1)<h3>';
+  }
+};
+
+const displayNewComment = (username, comment) => {
+  const commentGet = document.querySelector('.comment-get');
+  const dateObj = new Date();
+  const month = String(dateObj.getUTCMonth() + 1); // months from 1-12
+  const day = String(dateObj.getUTCDate());
+  const year = String(dateObj.getUTCFullYear());
+
+  const displayDate = `${day.padStart(2, '0')}/${month.padStart(2, '0')}/${year}`;
+
+  if (commentGet.innerHTML.includes('Be the first one to comment!')) {
+    commentGet.innerHTML = '';
+  }
+  commentGet.innerHTML += `<h6>${displayDate} ${username}: ${comment}</h6>`;
+};
+
+const addMealCommentFunction = (idMeal) => {
+  document.querySelector('#comment-post').addEventListener('click', () => {
+    const username = document.querySelector('#comment-username').value;
+    const comment = document.querySelector('#comment-comment').value;
+    commentPost(idMeal, username, comment);
+    clearFormField();
+    displayNewComment(username, comment);
+    displayCommentAmount();
   });
 };
 
@@ -35,9 +78,9 @@ const mealPopup = (idMeal) => {
 
       <h3>Add a comment</h3>
       <div>
-        <input type="text" placeholder="Your Name"></input>
-        <input type="text" placeholder="Your Insights"></input>
-        <button type="button">Comment</button>
+        <input type="text" placeholder="Your Name" id="comment-username"></input>
+        <input type="text" placeholder="Your Insights" id="comment-comment"></input>
+        <button type="button" id="comment-post">Comment</button>
       </div>
     </div>
   </div>
@@ -45,6 +88,7 @@ const mealPopup = (idMeal) => {
 
   document.querySelector('main').appendChild(commentWindow);
   commentGet(meal.idMeal);
+  addMealCommentFunction(idMeal);
 
   addClosePopup();
 };

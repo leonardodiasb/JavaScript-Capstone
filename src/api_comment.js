@@ -26,5 +26,21 @@ const commentGet = async (idMeal) => {
       }
     });
 };
+
+const commentPost = async (mealId, username, comment) => {
+  const fetchURL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/7w5w8pmXbpvQo9zrJ0vl/comments';
+
+  await fetch(fetchURL, {
+    method: 'POST',
+    body: JSON.stringify({
+      item_id: mealId,
+      username,
+      comment,
+    }),
+    headers: {
+      'Content-type': 'application/json; charset=UTF-8',
+    },
+  });
+};
 // eslint-disable-next-line
-export { commentGet };
+export { commentGet, commentPost };
