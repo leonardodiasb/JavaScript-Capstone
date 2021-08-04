@@ -171,35 +171,6 @@ ul {
   gap: 20px;
 }
 
-/* ul {
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-  border: 1px solid lightgrey;
-  border-radius: 4px;
-}
-
-li {
-  padding: 8px 10px;
-  border-bottom: 1px solid lightgrey;
-  transition-duration: 0.3s;
-  cursor: default;
-}
-
-li:nth-child(even) {
-  background-color: rgb(247, 247, 247);
-}
-
-li:last-child {
-  border: none;
-}
-
-li:hover {
-  background-color: rgb(235, 235, 235);
-  padding-left: 30px;
-  font-weight: bold;
-} */
-
 /* FORM - SUBMIT SCORE ================================================================= */
 
 input,
