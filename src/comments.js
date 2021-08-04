@@ -2,22 +2,16 @@ let mealList = [];
 
 const commentsFunction = (meals) => {
   mealList = meals;
-
-  mealPopup('52894');
-
 };
 
-const mealDetails = (idMeal) => {
-  return mealList.filter(meal => meal.idMeal === idMeal)[0];
-};
+const mealDetails = (idMeal) => mealList.filter((meal) => meal.idMeal === idMeal)[0];
 
 const mealPopup = (idMeal) => {
   const meal = mealDetails(idMeal);
 
   const commentWindow = document.createElement('div');
   commentWindow.classList.add('comment-container');
-  commentWindow.innerHTML = 
-  `
+  commentWindow.innerHTML = `
     <img src="${meal.strMealThumb}" a="${meal.strMeal}" />
     <div>
       <h3>${meal.strMeal}</h3>

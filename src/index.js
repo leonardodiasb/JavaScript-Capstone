@@ -15,4 +15,3 @@ window.onload = mealGet;
 // });
 
 // document.querySelector('#refresh').addEventListener('click', leaderboardGet);
-
