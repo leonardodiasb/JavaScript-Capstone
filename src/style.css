@@ -31,7 +31,7 @@ nav > div {
   justify-content: flex-start;
   align-items: center;
   padding: 1rem;
-  width: 70%;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -54,29 +54,14 @@ footer > div > p {
   color: #999;
 }
 
-.container {
-  width: 100%;
-  padding: 1rem;
-  max-width: 1100px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 100px;
-}
-
-.score-list-container,
-.add-score-container {
-  width: 100%;
-}
-
 .meal-img {
   max-width: 80vw;
   width: 100%;
 }
 
 .meal-container {
+  margin: 0 auto;
+  width: 100%;
   display: flex;
   flex-direction: column;
   padding-top: 130px;
@@ -150,6 +135,7 @@ footer > div > p {
   border-radius: 4px;
 }
 
+.comment-container h2,
 .comment-container h3 {
   margin: 15px 0;
   text-align: center;
@@ -222,21 +208,13 @@ input[type=number] {
 /* RESPONSIVENESS (FLEX CONTENT) ======================================================= */
 
 @media (min-width: 800px) {
-  .container {
-    flex-direction: row;
-  }
-
-  .score-list-container,
-  .add-score-container {
-    width: 50%;
-  }
-
   .meal-img {
     max-width: 30vw;
     width: 100%;
   }
 
   .meal-container {
+    width: 70%;
     display: flex;
     flex-direction: row;
     padding-top: 130px;
@@ -245,10 +223,15 @@ input[type=number] {
     flex-wrap: wrap;
     gap: 50px;
   }
+
+  footer > div,
+  nav > div {
+    width: 70%;
+  }
 }
 
 @media (min-width: 1080px) {
   .meal-img {
-    max-width: 25vw;
+    max-width: 20vw;
   }
 }

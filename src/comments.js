@@ -24,7 +24,7 @@ const mealPopup = (idMeal) => {
     <img src="${meal.strMealThumb}" a="${meal.strMeal}" />
     <button class="close-comment">✖</button>
     <div>
-      <h3>${meal.strMeal}</h3>
+      <h2>${meal.strMeal}</h2>
       <div>
         <h5>Nationality: ${meal.strArea}</h5>
         <h5>Category: ${meal.strCategory}</h5>
@@ -54,4 +54,4 @@ const addMealPopupFunction = (idMeal) => {
   document.querySelector(`#meal${idMeal}`).addEventListener('click', () => mealPopup(idMeal));
 };
 
-export { commentsFunction, mealPopup };
+export { commentsFunction, addMealPopupFunction };
