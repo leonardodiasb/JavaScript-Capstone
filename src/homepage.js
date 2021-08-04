@@ -1,4 +1,38 @@
-export default function homepageFunction(array) {
+import { postLikes, getLikes, likesArray } from './api_like.js';
+
+const updateLikes = (e) => {
+  const numberOfLikes = e.target.parentNode.firstChild.nextSibling;
+  numberOfLikes.innerHTML = Number(numberOfLikes.innerHTML) + 1;
+};
+
+const addLikeEvent = () => {
+  const itemsList = document.querySelectorAll('.heart');
+  const len = itemsList.length;
+  for (let index = 0; index < len; index += 1) {
+    itemsList[index].addEventListener('click', (e) => {
+      const mealId = e.target.parentNode.parentNode.parentNode.id;
+      postLikes(mealId);
+      updateLikes(e);
+    });
+  }
+};
+
+const updateLikesHTML = () => {
+  const numberOfLikesArray = document.querySelectorAll('.likes-number');
+  numberOfLikesArray.forEach((element) => {
+    const mealId = element.parentNode.parentNode.parentNode.id;
+    const numberOfLikes = element.parentNode.firstChild.nextSibling;
+    // eslint-disable-next-line
+    const filteredValue = likesArray[0].filter((item) => {
+      if (item.item_id === mealId) {
+        return item.likes;
+      }
+    });
+    numberOfLikes.innerHTML = filteredValue[0].likes;
+  });
+};
+
+const homepageFunction = (array) => {
   const container = document.querySelector('main');
   const mealContainer = document.createElement('div');
   mealContainer.classList.add('meal-container');
@@ -14,11 +48,17 @@ export default function homepageFunction(array) {
             <img src='${meal.strMealThumb}' a='${meal.strMeal} image' class='meal-img'>
             <div class='information'>    
                 <p>${meal.strMeal}</p>
-                <p class='empty-heart'>♡</p>
-                <p class='full-heart'>♥️</p>
+                <div class='likes-container'>
+                  <p class='likes-number'></p>
+                  <p class='heart'>♡</p>
+                </div>
             </div>
             <button type='button' class='comments-btn'>Comments</button>
             `;
     mealContainer.appendChild(mealItem);
   }
-}
+  getLikes().then(() => updateLikesHTML());
+  addLikeEvent();
+};
+
+export { homepageFunction, addLikeEvent };
