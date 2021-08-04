@@ -1,10 +1,7 @@
 let mealList = [];
 
 const commentsFunction = (meals) => {
-  console.log(4);
   mealList = meals;
-  console.log(5);
-  console.log(mealList);
 
   mealPopup('52894');
 
@@ -15,10 +12,7 @@ const mealDetails = (idMeal) => {
 };
 
 const mealPopup = (idMeal) => {
-  console.log(3);
   const meal = mealDetails(idMeal);
-  console.log(4);
-  console.log(meal);
 
   const commentWindow = document.createElement('div');
   commentWindow.classList.add('comment-container');
@@ -47,7 +41,6 @@ const mealPopup = (idMeal) => {
     </div>
   `;
   document.body.appendChild(commentWindow);
-  console.log(5);
 };
 
 export { commentsFunction, mealPopup };
