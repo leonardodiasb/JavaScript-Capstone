@@ -1,3 +1,5 @@
+import { commentGet } from './api_comment.js';
+
 let mealList = [];
 
 const commentsFunction = (meals) => {
@@ -14,9 +16,9 @@ const addClosePopup = () => {
 
 const mealPopup = (idMeal) => {
   const meal = mealDetails(idMeal);
-
   const commentWindow = document.createElement('div');
   commentWindow.classList.add('comment-background');
+
   commentWindow.innerHTML = `
   <div class="comment-container">
     <img src="${meal.strMealThumb}" a="${meal.strMeal}" />
@@ -24,15 +26,12 @@ const mealPopup = (idMeal) => {
     <div>
       <h3>${meal.strMeal}</h3>
       <div>
-        <h5>${meal.strArea}</h5>
-        <h5>${meal.strCategory}</h5>
+        <h5>Nationality: ${meal.strArea}</h5>
+        <h5>Category: ${meal.strCategory}</h5>
       </div>
 
-      <h3>Comments()</h3>
-      <div>
-        <h6>03/11/2021 Alex: I'd love to cook that!</h6>
-        <h6>03/11/2021 Mia: I love cooking!</h6>
-      </div>
+      <h3 class="comment-amount"></h3>
+      <div class="comment-get"></div>
 
       <h3>Add a comment</h3>
       <div>
@@ -43,8 +42,16 @@ const mealPopup = (idMeal) => {
     </div>
   </div>
   `;
-  document.body.appendChild(commentWindow);
+
+  document.querySelector('main').appendChild(commentWindow);
+  commentGet(meal.idMeal);
+
   addClosePopup();
+};
+
+// eslint-disable-next-line
+const addMealPopupFunction = (idMeal) => {
+  document.querySelector(`#meal${idMeal}`).addEventListener('click', () => mealPopup(idMeal));
 };
 
 export { commentsFunction, mealPopup };
