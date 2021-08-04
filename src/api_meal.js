@@ -1,4 +1,4 @@
-import homepageFunction from './homepage.js';
+import { homepageFunction } from './homepage.js';
 import { commentsFunction } from './comments.js';
 
 const fetchURL = 'https://www.themealdb.com/api/json/v1/1/search.php?f=b';
