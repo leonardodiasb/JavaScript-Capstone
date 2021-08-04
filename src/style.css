@@ -53,6 +53,7 @@ footer {
 footer > div > p {
   color: #999;
 }
+
 .meal-img {
   max-width: 80vw;
   width: 100%;
@@ -133,7 +134,6 @@ footer > div > p {
   width: 100%;
   border-radius: 4px;
 }
-
 
 .comment-container h2,
 .comment-container h3 {
