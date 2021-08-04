@@ -1,10 +1,7 @@
-// import { leaderboardGet, leaderboardPost } from './api.js';
 import { mealGet } from './api_meal.js';
 import './style.css';
 
 window.onload = mealGet;
-
-
 
 // document.querySelector('#submit').addEventListener('click', () => {
 //   // eslint-disable-next-line
@@ -19,4 +16,3 @@ window.onload = mealGet;
 // });
 
 // document.querySelector('#refresh').addEventListener('click', leaderboardGet);
-

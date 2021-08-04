@@ -9,13 +9,8 @@ const mealGet = async () => {
   })
     .then((response) => response.json())
     .then((data) => {
-      console.log(1)
       homepageFunction(data.meals);
-      console.log(2)
-
       commentsFunction(data.meals);
-      console.log(3)
-
     });
 };
 // eslint-disable-next-line
