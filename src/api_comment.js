@@ -1,3 +1,7 @@
+const commentCount = (commentArray) => {
+  return commentArray.length;
+}
+
 const commentGet = async (idMeal) => {
   const fetchURL = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/7w5w8pmXbpvQo9zrJ0vl/comments?item_id=${idMeal}`;
 
@@ -12,12 +16,13 @@ const commentGet = async (idMeal) => {
       return response.json();
     })
     .then((data) => {
-      if (data.length > 0) {
+      const count = commentCount(data);
+      if (count > 0) {
         const commentGetContainer = document.querySelector('.comment-get');
 
-        document.querySelector('.comment-amount').innerHTML += `<h3>Comments (${data.length})</h3>`;
+        document.querySelector('.comment-amount').innerHTML += `<h3>Comments (${count})</h3>`;
 
-        for (let i = 0; i < data.length; i += 1) {
+        for (let i = 0; i < count; i += 1) {
           const comment = data[i];
           const originalDate = comment.creation_date.split('-');
           const displayDate = `${originalDate[2]}/${originalDate[1]}/${originalDate[0]}`;
@@ -43,4 +48,4 @@ const commentPost = async (mealId, username, comment) => {
   });
 };
 // eslint-disable-next-line
-export { commentGet, commentPost };
+export { commentCount, commentGet, commentPost };
