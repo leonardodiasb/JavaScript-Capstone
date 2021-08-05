@@ -1,5 +1,7 @@
 const fetchURL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/7w5w8pmXbpvQo9zrJ0vl/likes';
 
+const itemsCounter = (data) => data.length;
+
 const postLikes = async (mealId) => {
   await fetch(fetchURL, {
     method: 'POST',
@@ -23,4 +25,6 @@ const getLikes = async () => {
     });
 };
 
-export { postLikes, getLikes, likesArray };
+export {
+  postLikes, getLikes, likesArray, itemsCounter,
+};
