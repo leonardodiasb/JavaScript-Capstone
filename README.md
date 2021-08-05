@@ -6,6 +6,9 @@
 
 ![screenshot](./app_screenshot.png)
 
+## Video
+[Watch our video about this project here.](https://www.loom.com/share/b407d818ee914bcd984e4b5ec170e8cc)
+
 ## Built With
 
 - HTML/CSS
