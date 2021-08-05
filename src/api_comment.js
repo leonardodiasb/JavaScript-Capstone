@@ -1,6 +1,4 @@
-const commentCount = (commentArray) => {
-  return commentArray.length;
-}
+const commentCount = (commentArray) => commentArray.length;
 
 const commentGet = async (idMeal) => {
   const fetchURL = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/7w5w8pmXbpvQo9zrJ0vl/comments?item_id=${idMeal}`;
