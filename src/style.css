@@ -197,10 +197,6 @@ input[type=button]:hover {
   opacity: 0.5;
 }
 
-input:invalid {
-  border: 1px solid #e24b4b;
-}
-
 /* Hide INPUT NUMBER ARROWS */
 
 /* Chrome, Safari, Edge, Opera */
@@ -213,6 +209,10 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type=number] {
   -moz-appearance: textfield;
+}
+
+input:invalid {
+  border: 1px solid #e24b4b;
 }
 
 /* RESPONSIVENESS (FLEX CONTENT) ======================================================= */
