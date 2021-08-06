@@ -50,10 +50,13 @@ const addMealCommentFunction = (idMeal) => {
   document.querySelector('#comment-post').addEventListener('click', () => {
     const username = document.querySelector('#comment-username').value;
     const comment = document.querySelector('#comment-comment').value;
-    commentPost(idMeal, username, comment);
-    clearFormField();
-    displayNewComment(username, comment);
-    displayCommentAmount();
+
+    if (username.length >= 3 && comment.length >= 3) {
+      commentPost(idMeal, username, comment);
+      clearFormField();
+      displayNewComment(username, comment);
+      displayCommentAmount();
+    }
   });
 };
 
@@ -78,8 +81,8 @@ const mealPopup = (idMeal) => {
 
       <h3>Add a comment</h3>
       <div>
-        <input type="text" placeholder="Your Name" id="comment-username"></input>
-        <input type="text" placeholder="Your Insights" id="comment-comment"></input>
+        <input type="text" placeholder="Your Name" id="comment-username" minlength="3"></input>
+        <input type="text" placeholder="Your Insights" id="comment-comment" minlength="3"></input>
         <button type="button" id="comment-post">Comment</button>
       </div>
     </div>
